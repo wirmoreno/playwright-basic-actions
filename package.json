@@ -1,0 +1,21 @@
+{
+  "name": "petscreening",
+  "version": "1.0.0",
+  "description": "A test task for PetScreening",
+  "main": "task1.js",
+  "scripts": {
+    "test:all": "playwright test",
+    "test:headed:filter": "playwright test --headed --grep",
+    "test:headless:filter": "playwright test --headed --grep",
+    "test:dryrun": "playwright test --list",
+    "test:debug:filter": "playwright test --debug --grep",
+    "test:report": "playwright show-report"
+  },
+  "keywords": [],
+  "author": "William Moreno",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "@types/node": "^22.0.0"
+  }
+}

@@ -1,8 +1,7 @@
 {
-  "name": "petscreening",
+  "name": "playwright-workshop",
   "version": "1.0.0",
-  "description": "A test task for PetScreening",
-  "main": "task1.js",
+  "description": "A basic test framework using Playwright",
   "scripts": {
     "test:all": "playwright test",
     "test:headed:filter": "playwright test --headed --grep",

@@ -15,7 +15,10 @@ export class ButtonsPage extends BasePage {
     async goToHomeNComeBack() {
         await this.mapping.goToHomeBtn.click();
         await this.page.goto("https://letcode.in/buttons");
-        expect.soft(this.page.url()).toBe("https://letcode.in/buttons");
+    }
+
+    async verifyIfCurrentPageIsButtonsPage() {
+        expect(this.page.url()).toBe("https://letcode.in/buttons");
     }
 
     async getElementCoordinates() {

@@ -1,11 +1,11 @@
 # Table of Contents
 1. [Input](#input)   
     - [Enter your full Name](#enter-your-full-name)
-    - [Append a text and press keyboard tab](#append-a-text-and-press-keyboard-tab)
     - [What is inside the text box](#what-is-inside-the-text-box)
     - [Clear the text](#clear-the-text)
     - [Confirm edit field is disabled](#confirm-edit-field-is-disabled)
     - [Confirm text is readonly](#confirm-text-is-readonly)
+    - [Append a text and press keyboard tab](#append-a-text-and-press-keyboard-tab)
 
 2. []
 
@@ -20,21 +20,6 @@ Todos os testes são realizados na página "Input"
 
 ### O que precisa ser feito?
 É necessário apenas inserir um nome no campo `Enter your full Name`, e validar se o texto inserido no campo é igual ao texto atual do campo   
-
-## Append a text and press keyboard tab
-![](/doc-assets/input/append-text.png)
-
-### O que precisa ser feito?
-É necessário manter o mesmo texto atual do campo(I am good), e apenas adicionar um novo texto ao final do campo, realizar uma concatenação no campo.
-
-Exemplo 1:
-
-![](/doc-assets/input/append-text2.png)
-
-Exemplo 2:
-
-![](/doc-assets/input/append-text3.png)
-
 
 ## What is inside the text box
 ![](/doc-assets/input/what-is-inside.png)
@@ -60,6 +45,20 @@ Exemplo 2:
 
 ### O que precisa ser feito?
 É necessário apenas verificar se o campo está configurado como apenas leitura
+
+## Append a text and press keyboard tab
+![](/doc-assets/input/append-text.png)
+
+### O que precisa ser feito?
+É necessário manter o mesmo texto atual do campo(I am good), e apenas adicionar um novo texto ao final do campo, realizar uma concatenação no campo.
+
+Exemplo 1:
+
+![](/doc-assets/input/append-text2.png)
+
+Exemplo 2:
+
+![](/doc-assets/input/append-text3.png)
 
 ## Documentações úteis
 

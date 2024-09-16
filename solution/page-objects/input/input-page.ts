@@ -42,8 +42,8 @@ export class InputPage extends BasePage {
      * Verify if the actual texto on the "Append a text and press keyboard tab" field is equal to {text} and check if the 
      * "What is inside the text box" field is actually on focus
      * @param text The expected text to be on the "Append a text and press keyboard tab" field
-     */
-    async verifyAppendTextNPressTabField(text: string) {
+     */ 
+    async verifyAppendTextFieldNPressTab(text: string) {
         expect.soft(this.mapping.appendTextNPressTab.inputValue()).toBe(text);
         expect.soft(this.mapping.whatIsInsideTheTextBox).toBeFocused();
     }

@@ -20,20 +20,14 @@ test.describe("Test suite for Input tests",
                 await inputPage.verifyFullNameField(name);
             });
 
-            await test.step("Append a text and press keyboard tab", async () => {
-                const text = "Text to append";
-                await inputPage.appendTextNPressTab(text);
-                await inputPage.verifyAppendTextNPressTabField(text);
-            });
-
             await test.step("What is inside the text box", async () => {
                 const expectedText = "ortonikc";
-                await inputPage.getTextFromWhatIsInsideTheTextBox(expectedText);
+                await inputPage.verifyTextFromWhatIsInsideTextBox(expectedText);
             });
 
             await test.step("Clear the text", async () => {
-                await inputPage.clearTheClearTheNextField();
-                await inputPage.VerifyIfTheClearTheNextFieldIsClear();
+                await inputPage.clearTheClearTheTextField();
+                await inputPage.verifyIfTheClearTheTextFieldIsClear();
             });
 
             await test.step("Confirm edit field is disabled", async () => {
@@ -42,6 +36,12 @@ test.describe("Test suite for Input tests",
 
             await test.step("Confirm text is readonly", async () => {
                 await inputPage.verifyTextIsReadonly();
+            });
+
+            await test.step("Append a text and press keyboard tab", async () => {
+                const text = "Text to append";
+                await inputPage.appendTextNPressTab(text);
+                await inputPage.verifyAppendTextFieldNPressTab(text);
             });
         })
     });

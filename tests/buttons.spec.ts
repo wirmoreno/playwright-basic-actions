@@ -43,6 +43,12 @@ test.describe("Test suite for Button tests",
                  * 
                  * docs:
                  * https://playwright.dev/docs/api/class-locator#locator-bounding-box
+                 * 
+                 * Notas: 
+                 * - As coordenadas podem variar de acordo com o tamanho da tela, então não se preocupe se as coordenadas não forem exatamente iguais a de algum amigo ao lado;
+                 * - Utilize as coordenadas extraídas no passo 1 para verificar se as coordenadas estão corretas no passo 2;
+                 * - Em um caso real, você pode usar as coordenadas para verificar se um elemento está visível na tela, ou se está em uma posição específica. Neste nosso caso estamos usando a mesma coordenada extraída no passo 1, então, 
+                 * naturalmente o teste sempre irá passar, mas entenda que o conceito é verificar a posição do elemento na tela.
                  */
             });
         });
@@ -55,6 +61,8 @@ test.describe("Test suite for Button tests",
                  * 
                  * docs:
                  * https://playwright.dev/docs/api/class-locator#locator-bounding-box
+                 * 
+                 * nota: Os valores utilizados no passo 2 devem ser os mesmos valores extraídos no passo 1.
                  */
             });
         });
@@ -68,6 +76,8 @@ test.describe("Test suite for Button tests",
                  * 
                  * docs:
                  * https://playwright.dev/docs/api/class-locator#locator-get-attribute
+                 * 
+                 * nota: Os valores utilizados no passo 2 devem ser os mesmos valores extraídos no passo 1.
                  */
             });
         });

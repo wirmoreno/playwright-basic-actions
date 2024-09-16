@@ -1,5 +1,4 @@
 import { test } from "../config/pages-fixtures"
-import { TestPage } from "../page-objects/test/test-page";
 
 /**
  * Utilize as dicas em cada passo/step para saber o que fazer, e como interagir com os componentes.
@@ -27,7 +26,10 @@ test.describe("Test suite for Button tests",
                  * Passo 3: Chame o método goToHomeNComeBack() na page "buttonsPage" dentro desse step atual
                  * Passo 4: Chame o método verifyIfCurrentPageIsButtonsPage() na page "buttonsPage" dentro desse step atual
                  * 
-                 * docs
+                 * docs:
+                 * https://playwright.dev/docs/api/class-page#page-goto
+                 * https://playwright.dev/docs/api/class-page#page-url
+                 * https://playwright.dev/docs/test-assertions#auto-retrying-assertions
                  */
             });
         });
@@ -38,6 +40,9 @@ test.describe("Test suite for Button tests",
                  * Passo 1: Crie um método chamado getFindLocationBtnCoordinates() na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve extrair as coordenadas do botão "Find Location" e retornar um objeto com as coordenadas "x" e "y"
                  * Passo 2: Crie um método chamado verifyFindLocationBtnCoordinates(x: number, y: number) na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve verificar se as coordenadas "x" e "y" passadas como 
                  * argumento são iguas as coordenadas atuais do botão "Find Location"
+                 * 
+                 * docs:
+                 * https://playwright.dev/docs/api/class-locator#locator-bounding-box
                  */
             });
         });
@@ -47,6 +52,9 @@ test.describe("Test suite for Button tests",
                 /**
                  * Passo 1: Crie um método chamado getTallNFatHeightNWidth() na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve extrair a altura e largura do botão "How tall and fat I am?" e retornar um objeto com esses valores
                  * Passo 2: Crie um método chamado verifyTallNFatHeightNWidth(height: number, width: number) na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve verificar se a altura e largura passadas como argumento são iguais a altura e largura do botão "How tall and fat I am?"
+                 * 
+                 * docs:
+                 * https://playwright.dev/docs/api/class-locator#locator-bounding-box
                  */
             });
         });
@@ -57,21 +65,43 @@ test.describe("Test suite for Button tests",
                 /**
                  * Passo 1: Crie um método chamado getWhatIsMyColorBtnColor() na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve extrair a cor do botão "What is my color?" e retornar a cor
                  * Passo 2: Crie um método chamado verifyWhatIsMyColorBtnColor(actualColor: string) na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve verificar se a cor passada como argumento é igual a cor do botão "What is my color?"
+                 * 
+                 * docs:
+                 * https://playwright.dev/docs/api/class-locator#locator-get-attribute
                  */
             });
         });
 
-        test("Confirm button is disabled", { tag: ["@button-disabled"] }, async ({ buttonsPage }) => {
+        test("Verify if the 'Confirm button is disabled' button is disabled", { tag: ["@button-disabled"] }, async ({ buttonsPage }) => {
 
-            await test.step("Confirm button is disabled", async () => {
-                await buttonsPage.checkIfButtonIsDisabled();
+            await test.step("Verify if the 'Confirm button is disabled' button is disabled", async () => {
+                /**
+                 * Passo 1: Crie um método chamado checkIfButtonIsDisabled() na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve verificar se o botão "disabled" está desabilitado
+                 * 
+                 * docs:
+                 * https://playwright.dev/docs/test-assertions#auto-retrying-assertions
+                 */
             });
         });
 
-        test("Click and Hold Button ", { tag: ["@button-click-n-hold"] }, async ({ buttonsPage }) => {
+        test("Click and Hold on the 'Button Hold!' button", { tag: ["@button-click-n-hold"] }, async ({ buttonsPage }) => {
 
-            await test.step("Click and Hold Button", async () => {
-                await buttonsPage.clickAndHoldButton();
+            await test.step("Click and Hold on the button", async () => {
+                /**
+                 * Passo 1: Crie um método chamado clickAndHoldButton(delay: number) na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve clicar e segurar no botão "Button Hold!" por um determinado tempo
+                 * 
+                 * docs:
+                 * https://playwright.dev/docs/api/class-mouse#mouseclickandhold
+                 */
+            });
+
+            await test.step("Verify if the click and hold was performed properly", async () => {
+                /**
+                 * Passo 1: Crie um método chamado verifyIfTheClickAndHoldButtonIsClicked(expectedMsg: string) na page "buttonsPage"(page-objects > buttons > buttons-page.ts). Este método deve verificar se a mensagem passada como argumento é exibida após o click and hold no botão "Button Hold!"
+                 * 
+                 * docs:
+                 * https://playwright.dev/docs/test-assertions#auto-retrying-assertions
+                 */
             });
         });
     });

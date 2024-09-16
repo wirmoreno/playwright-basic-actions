@@ -1,5 +1,4 @@
 import { test } from "../config/pages-fixtures"
-import { TestPage } from "../page-objects/test/test-page";
 
 /**
  * Utilize as dicas em cada passo/step para saber o que fazer, e como interagir com os componentes.

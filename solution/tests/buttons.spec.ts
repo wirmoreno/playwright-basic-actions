@@ -45,17 +45,23 @@ test.describe("Test suite for Button tests",
             });
         });
 
-        test("Confirm button is disabled", { tag: ["@button-disabled"] }, async ({ buttonsPage }) => {
+        test("Verify if the 'Confirm button is disabled' button is disabled", { tag: ["@button-disabled"] }, async ({ buttonsPage }) => {
 
-            await test.step("Confirm button is disabled", async () => {
+            await test.step("Verify if the 'Confirm button is disabled' button is disabled", async () => {
                 await buttonsPage.checkIfButtonIsDisabled();
             });
         });
 
-        test("Click and Hold Button ", { tag: ["@button-click-n-hold"] }, async ({ buttonsPage }) => {
+        test("Click and Hold on the 'Button Hold!' button", { tag: ["@button-click-n-hold"] }, async ({ buttonsPage }) => {
 
-            await test.step("Click and Hold Button", async () => {
-                await buttonsPage.clickAndHoldButton();
+            await test.step("Click and Hold on the button", async () => {
+                const delay = 3000;
+                await buttonsPage.clickAndHoldButton(delay);
+            });
+
+            await test.step("Verify if the click and hold was performed properly", async () => {
+                const expectedMsg = "Button has been long pressed";
+                await buttonsPage.verifyIfTheClickAndHoldButtonIsClicked(expectedMsg);
             });
         });
     });

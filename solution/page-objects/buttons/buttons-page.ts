@@ -101,8 +101,16 @@ export class ButtonsPage extends BasePage {
     /**
      * Click and hold the "Click and Hold Button" button
      */
-    async clickAndHoldButton() {
+    async clickAndHoldButton(delay: number) {
         await this.mapping.buttonHold.click({ delay: 3000 });
-        expect.soft(await this.mapping.buttonHold.textContent()).toBe("Button has been long pressed");
+    }
+
+    /**
+     * Verify if the "Button Hold!" button is clicked
+     * @param expectedText The expected text to be displayed on the button after the click
+     */
+    async verifyIfTheClickAndHoldButtonIsClicked(expectedText: string) {
+        const buttonHoldTxt = await this.mapping.buttonHold.textContent();
+        expect.soft(buttonHoldTxt).toBe(expectedText);
     }
 }

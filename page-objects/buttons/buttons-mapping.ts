@@ -13,11 +13,10 @@ export class ButtonsPageMapping {
     constructor(page: Page) {
         this.page = page;
         this.goToHomeBtn = this.page.getByTestId("home");
-        this.findLocationBtn = this.page.getByTestId("position");
-        this.tallAndFatBtn = this.page.getByTestId("property");
-        this.colorBtn = this.page.getByTestId("color");
-        this.disabledBtn = this.page.locator("button[id='isDisabled'][title='Disabled button']");
-        this.buttonHold = this.page.locator("button[id='isDisabled'][class*='is-primary']");
-
+        this.findLocationBtn = '';
+        this.tallAndFatBtn = '';
+        this.colorBtn = '';
+        this.disabledBtn = '';
+        this.buttonHold = '';
     }
 }

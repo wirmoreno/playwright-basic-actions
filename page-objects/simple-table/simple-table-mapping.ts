@@ -8,8 +8,8 @@ export class SimpleTablePageMapping {
 
     constructor(page: Page) {
         this.page = page;
-        this.shoppingListTable = this.page.getByTestId("shopping");
-        this.simpleTable = this.page.getByTestId("simpletable");
-        this.sortTable = this.page.locator("table[matsort]");
+        this.shoppingListTable = '';
+        this.simpleTable = '';
+        this.sortTable = '';
     }
 }

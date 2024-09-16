@@ -11,11 +11,4 @@ export class MultiSelectPage extends BasePage {
         this.page = page;
         this.mapping = new MultiSelectPageMapping(page);
     }
-
-    async selectAll() {
-
-        for await (const option of await this.mapping.selectableList.all()) {
-            await option.click({ modifiers: ["Control"] });
-        }
-    }
 }

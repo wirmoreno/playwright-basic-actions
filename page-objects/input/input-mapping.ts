@@ -12,10 +12,10 @@ export class InputPageMapping {
     constructor(page: Page) {
         this.page = page;
         this.fullName = this.page.getByTestId("fullName");
-        this.appendTextNPressTab = this.page.getByTestId("join");
-        this.whatIsInsideTheTextBox = this.page.getByTestId("getMe");
-        this.clearText = this.page.getByTestId("clearMe");
-        this.disabled = this.page.getByTestId("noEdit");
-        this.readOnly = this.page.getByTestId("dontwrite");
+        this.appendTextNPressTab = '';
+        this.whatIsInsideTheTextBox = '';
+        this.clearText = '';
+        this.disabled = '';
+        this.readOnly = '';
     }
 }

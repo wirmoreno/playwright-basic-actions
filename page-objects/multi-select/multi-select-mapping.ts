@@ -6,6 +6,6 @@ export class MultiSelectPageMapping {
 
     constructor(page: Page) {
         this.page = page;
-        this.selectableList = this.page.getByTestId("selectable");
+        this.selectableList = '';
     }
 }

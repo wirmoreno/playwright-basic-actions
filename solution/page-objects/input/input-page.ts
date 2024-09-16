@@ -20,34 +20,68 @@ export class InputPage extends BasePage {
     }
 
     /**
+     * Fills out the input for the "Enter your full Name" field
+     * @param expectedFullName The expected text to be compared with the actual value on the FullName field
+     */
+    async verifyFullNameField(expectedFullName: string) {
+        const actualText = await this.mapping.fullName.inputValue();
+        expect.soft(actualText).toBe(expectedFullName);
+    }
+
+    /**
      * Appends a text into the 'Append a text and press keyboard tab' field and then press tab
      * @param text the text to append on the field
      */
     async appendTextNPressTab(text: string) {
         await this.mapping.appendTextNPressTab.click();
         await this.mapping.appendTextNPressTab.pressSequentially(text);
-        await this.mapping.appendTextNPressTab.press("Tab");
+        await this.mapping.appendTextNPressTab.press("Tab");        
+    }
 
-        expect.soft(this.mapping.appendTextNPressTab.getAttribute("value")).toBe(text);
+    /**
+     * Verify if the actual texto on the "Append a text and press keyboard tab" field is equal to {text} and check if the 
+     * "What is inside the text box" field is actually on focus
+     * @param text The expected text to be on the "Append a text and press keyboard tab" field
+     */
+    async verifyAppendTextNPressTabField(text: string) {
+        expect.soft(this.mapping.appendTextNPressTab.inputValue()).toBe(text);
         expect.soft(this.mapping.whatIsInsideTheTextBox).toBeFocused();
     }
 
-    async getTextFromWhatIsInsideTheTextBox() {
-        const text = await this.mapping.whatIsInsideTheTextBox.getAttribute("value");
-        expect.soft(text).toEqual("ortonikc");
+    /**
+     * Verify if the text from the {expectedText} matches with the "What is inside the text box" field
+     * @param expectedText The expected text to be on the "What is inside the text box" field
+     */
+    async verifyTextFromWhatIsInsideTextBox(expectedText: string) {
+        const text = await this.mapping.whatIsInsideTheTextBox.inputValue();
+        expect.soft(text).toEqual(expectedText);
     }
 
-    async clearText() {
-        await this.mapping.clearText.clear();
-        expect.soft(this.mapping.clearText.getAttribute("value")).toBeFalsy();
+    /**
+     * Clear the "Clear the text" field
+     */
+    async clearTheClearTheTextField() {
+        await this.mapping.clearText.clear();        
     }
 
+    /**
+     * Verify if the "Clear the text" field is empty/clear
+     */
+    async verifyIfTheClearTheTextFieldIsClear() {
+        expect.soft(this.mapping.clearText.inputValue()).toBeFalsy();
+    }
 
-    async expectDisabled() {
+    /**
+     * Verify if the "Confirm edit field is disabled" field is disabled
+     */
+    async verifyEditFieldIsDisabled() {
         expect.soft(this.mapping.disabled).toBeDisabled();
     }
 
-    async expectReadOnly() {
+    /**
+     * Verifiy if the "Confirm text is readonly" is readonly
+     */
+    async verifyTextIsReadonly() {
         expect.soft(this.mapping.readOnly).toHaveAttribute("readonly");
     }
 }

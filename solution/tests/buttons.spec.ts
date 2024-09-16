@@ -10,7 +10,7 @@ test.beforeEach("Open Base URL", async ({ basePage, testPage }) => {
 
 test.describe("Test suite for Button tests",
     { tag: "@buttons-all" }, () => {
-        test("Buttons - Go To Home", { tag: ["@button-go-home"] }, async ({ buttonsPage }) => {            
+        test("Go To Home", { tag: ["@button-go-home"] }, async ({ buttonsPage }) => {            
 
             await test.step("Goto Home and come back here using driver command", async () => {
                 await buttonsPage.goToHomeNComeBack();
@@ -18,33 +18,41 @@ test.describe("Test suite for Button tests",
             });
         });
 
-        test("Buttons - Find Element Coordinates", { tag: ["@button-find-location"] }, async ({ buttonsPage }) => {
+        test("Find Element Coordinates", { tag: ["@button-find-location"] }, async ({ buttonsPage }) => {
 
-            await test.step("Get element coordinates", async () => {
-                await buttonsPage.getElementCoordinates();
+            await test.step("Verify element coordinates", async () => {
+                const coordinates = await buttonsPage.getFindLocationBtnCoordinates();
+                
+                await buttonsPage.verifyFindLocationBtnCoordinates(coordinates.x, coordinates.y);
             });
         });
 
-        test("Buttons - Find the height & width of the button ", { tag: ["@button-find-width-height"] }, async ({ buttonsPage }) => {
+        test("Find the height & width of the button ", { tag: ["@button-find-width-height"] }, async ({ buttonsPage }) => {
 
-            await test.step("Get element width and height", async () => {
-                await buttonsPage.getElementHeightNWidth();
+            await test.step("Vefify the width and height from the 'How Tall & fat I am?' button", async () => {
+                const hegihtNWidth = await buttonsPage.getTallNFatHeightNWidth();
+
+                await buttonsPage.verifyTallNFatHeightNWidth(hegihtNWidth.height, hegihtNWidth.width);
             });
         });
 
-        test("Buttons - Find the color of the button ", { tag: ["@button-color"] }, async ({ buttonsPage }) => {
+        test("Find the color of the button ", { tag: ["@button-color"] }, async ({ buttonsPage }) => {
 
-            await test.step("Get element width and height", async () => {
-                await buttonsPage.getElementColor();
+            await test.step("Verify the 'What is my color?' button color", async () => {
+                const actualColor = await buttonsPage.getWhatIsMyColorBtnColor();
+
+                await buttonsPage.verifyWhatIsMyColorBtnColor(actualColor);
             });
         });
 
-        test("Buttons - Confirm button is disabled / Click and Hold Button ", { tag: ["@button-state"] }, async (
-            { buttonsPage }) => {
+        test("Confirm button is disabled", { tag: ["@button-disabled"] }, async ({ buttonsPage }) => {
 
             await test.step("Confirm button is disabled", async () => {
                 await buttonsPage.checkIfButtonIsDisabled();
             });
+        });
+
+        test("Click and Hold Button ", { tag: ["@button-click-n-hold"] }, async ({ buttonsPage }) => {
 
             await test.step("Click and Hold Button", async () => {
                 await buttonsPage.clickAndHoldButton();

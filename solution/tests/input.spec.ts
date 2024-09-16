@@ -1,6 +1,4 @@
 import { test } from "../../config/pages-fixtures"
-import { TestPage } from "../page-objects/test/test-page";
-
 
 test.beforeEach("Open Base URL", async ({ basePage, testPage }) => {
     basePage.openApplication();

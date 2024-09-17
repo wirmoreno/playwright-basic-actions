@@ -3,7 +3,7 @@ import { TestPage } from '../page-objects/test/test-page';
 import { BasePage } from '../page-objects/base-page';
 import { InputPage } from '../page-objects/input/input-page'
 import { ButtonsPage } from '../page-objects/buttons/buttons-page'
-import { DropdownPage } from '../page-objects/dropdown/dropdown-page'
+import { SelectPage } from '../page-objects/select/select-page'
 import { DragPage } from '../page-objects/drag/drag-page'
 import { MultiSelectPage } from '../page-objects/multi-select/multi-select-page'
 import { SimpleTablePage } from '../page-objects/simple-table/simple-table-page'
@@ -13,7 +13,7 @@ type pages = {
     testPage: TestPage;
     inputPage: InputPage;
     buttonsPage: ButtonsPage;
-    dropdownPage: DropdownPage;
+    selectPage: SelectPage;
     dragPage: DragPage;
     multiSelectPage: MultiSelectPage;
     simpleTablePage: SimpleTablePage;
@@ -32,8 +32,8 @@ const getPages = baseTest.extend<pages>({
     buttonsPage: async ({ page }, use) => {
         await use(new ButtonsPage(page));
     },
-    dropdownPage: async ({ page }, use) => {
-        await use(new DropdownPage(page));
+    selectPage: async ({ page }, use) => {
+        await use(new SelectPage(page));
     },
     dragPage: async ({ page }, use) => {
         await use(new DragPage(page));

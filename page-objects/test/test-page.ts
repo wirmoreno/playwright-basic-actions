@@ -24,19 +24,15 @@ export class TestPage extends BasePage {
         await this.mapping.selectCard.click();
     }
 
-    async openDragCard() {
-        await this.mapping.dragCard.click();
-    }
-
     async openMultiSelectCard() {
         await this.mapping.multiSelectionCard.click();
     }
 
-    async openTablesCard() {
-        await this.mapping.tablesCard.click();
+    async openRadioCard() {
+        await this.mapping.radioCard.click();
     }
 
-    async openAdvancedTablesCard() {
-        await this.mapping.advancedTablesCard.click();
+    async openFormCard() {
+        await this.mapping.form.click();
     }
 }

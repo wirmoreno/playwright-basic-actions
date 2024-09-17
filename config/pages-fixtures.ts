@@ -4,9 +4,9 @@ import { BasePage } from '../page-objects/base-page';
 import { InputPage } from '../page-objects/input/input-page'
 import { ButtonsPage } from '../page-objects/buttons/buttons-page'
 import { SelectPage } from '../page-objects/select/select-page'
-import { DragPage } from '../page-objects/drag/drag-page'
 import { MultiSelectPage } from '../page-objects/multi-select/multi-select-page'
-import { SimpleTablePage } from '../page-objects/simple-table/simple-table-page'
+import { RadioPage } from '../page-objects/radio/radio-page'
+import { FormPage } from '../page-objects/form/form-page'
 
 type pages = {
     basePage: BasePage;
@@ -14,9 +14,9 @@ type pages = {
     inputPage: InputPage;
     buttonsPage: ButtonsPage;
     selectPage: SelectPage;
-    dragPage: DragPage;
     multiSelectPage: MultiSelectPage;
-    simpleTablePage: SimpleTablePage;
+    radioPage: RadioPage;
+    formPage: FormPage;
 }
 
 const getPages = baseTest.extend<pages>({
@@ -35,14 +35,14 @@ const getPages = baseTest.extend<pages>({
     selectPage: async ({ page }, use) => {
         await use(new SelectPage(page));
     },
-    dragPage: async ({ page }, use) => {
-        await use(new DragPage(page));
-    },
     multiSelectPage: async ({ page }, use) => {
         await use(new MultiSelectPage(page));
     },
-    simpleTablePage: async ({ page }, use) => {
-        await use(new SimpleTablePage(page));
+    radioPage: async ({ page }, use) => {
+        await use(new RadioPage(page));
+    },
+    formPage: async ({ page }, use) => {
+        await use(new FormPage(page));
     }
 });
 

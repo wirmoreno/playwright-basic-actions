@@ -15,13 +15,13 @@
     - [Confirm button is disabled](#confirm-button-is-disabled)
     - [Click and Hold Button](#click-and-hold-button)
 
-3. [Dropdown](#select-dropdown)
+3. [Select](#select-dropdown)
     - [Select the apple using visible text](#select-the-apple-using-visible-text)
     - [Select your super hero's](#select-your-super-heros)
     - [[Home Challenge] Select your super hero's](#challenge-select-your-super-heros)
     - [Select the last programming language and print all the options](#select-the-last-programming-language-and-print-all-the-options)
 
-4. []
+4. [Multi-Select]()
 5. [Documentações úteis](#documentações-úteis)
 
 # Input
@@ -120,7 +120,7 @@ Clique no botão por no mínimo 5 segundos e valide se o texto do botão mudou p
 
 
 # Select (dropdown)
-Todos os testes são realizados na página "Buttons"
+Todos os testes são realizados na página "Dropdowns"
 
 [Clique aqui](https://letcode.in/dropdowns) para abrir a página
 
@@ -147,6 +147,17 @@ Verifique se as opções selecionadas estão iguais as opções que você espera
 
 ### O que precisa ser feito?
 Selecione a última opção através do index da opção desejada
+
+# Multi-Select
+Todos os testes são realizados na página "Selectable"
+
+[Clique aqui](https://letcode.in/selectable) para abrir a página
+
+## Let's select 😉 all
+![](/doc-assets/multi-select/multi-select.png)
+
+### O que precisa ser feito?
+Selecione todas as opções disponíveis
 
 # Documentações úteis
 

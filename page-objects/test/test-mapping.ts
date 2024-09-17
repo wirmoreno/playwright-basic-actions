@@ -9,6 +9,8 @@ export class TestPageMapping {
     public readonly multiSelectionCard: Locator;
     public readonly tablesCard: Locator;
     public readonly advancedTablesCard: Locator;
+    public readonly radioCard: Locator;
+    public readonly form: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -19,5 +21,7 @@ export class TestPageMapping {
         this.multiSelectionCard = this.page.locator("a[href='/selectable']");
         this.tablesCard = this.page.locator("a[href='/table']");
         this.advancedTablesCard = this.page.locator("a[href='/advancedtable']");
+        this.radioCard = this.page.locator("a[href='/radio']");
+        this.form = this.page.locator("a[href='/forms']");
     }
 }

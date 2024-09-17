@@ -12,6 +12,9 @@ export class MultiSelectPage extends BasePage {
         this.mapping = new MultiSelectPageMapping(page);
     }
 
+    /**
+     * Select all options from the multi-select element
+     */
     async selectAll() {
 
         for await (const option of await this.mapping.selectableList.all()) {

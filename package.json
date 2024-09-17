@@ -1,8 +1,9 @@
 {
   "name": "playwright-workshop",
   "version": "1.0.0",
-  "description": "A basic test framework using Playwright",
+  "description": "It's a simple test framework based on Playwright created for a Playwright workshop",
   "scripts": {
+    "playwright:install:browsers": "playwright install --with-deps chromium webkit",
     "test:all": "playwright test",
     "test:headed:filter": "playwright test --headed --grep",
     "test:headless:filter": "playwright test --headed --grep",

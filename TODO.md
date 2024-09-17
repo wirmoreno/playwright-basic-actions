@@ -1,5 +1,7 @@
 # Table of Contents
-1. [Input](#input)   
+1. [Configuração do projeto](#configuração-do-projeto)
+
+2. [Input](#input)   
     - [Enter your full Name](#enter-your-full-name)
     - [What is inside the text box](#what-is-inside-the-text-box)
     - [Clear the text](#clear-the-text)
@@ -7,7 +9,7 @@
     - [Confirm text is readonly](#confirm-text-is-readonly)
     - [Append a text and press keyboard tab](#append-a-text-and-press-keyboard-tab)
 
-2. [Buttons](#buttons)
+3. [Buttons](#buttons)
     - [Goto Home and come back here using driver command](#goto-home-and-come-back-here-using-driver-command)
     - [Get the X & Y co-ordinates](#get-the-x--y-co-ordinates)
     - [Find the color of the button](#find-the-color-of-the-button)
@@ -15,14 +17,35 @@
     - [Confirm button is disabled](#confirm-button-is-disabled)
     - [Click and Hold Button](#click-and-hold-button)
 
-3. [Select](#select-dropdown)
+4. [Select](#select-dropdown)
     - [Select the apple using visible text](#select-the-apple-using-visible-text)
     - [Select your super hero's](#select-your-super-heros)
     - [[Home Challenge] Select your super hero's](#challenge-select-your-super-heros)
     - [Select the last programming language and print all the options](#select-the-last-programming-language-and-print-all-the-options)
 
-4. [Multi-Select]()
-5. [Documentações úteis](#documentações-úteis)
+5. [Multi-Select](#multi-select)
+    -[Let's select 😉 all](#lets-select--all)
+
+6. [Radio]()
+
+7. [Form]()
+
+8. [Documentações úteis](#documentações-úteis)
+
+# Configuração do projeto
+Abra o terminal da sua IDE e digite os seguintes comandos
+
+``` javascript
+npm i
+```
+
+``` javascript
+npm run playwright:install:browsers
+```
+
+``` javascript
+npm run test:dryrun
+```
 
 # Input
 Todos os testes são realizados na página "Input"
@@ -159,6 +182,36 @@ Todos os testes são realizados na página "Selectable"
 ### O que precisa ser feito?
 Selecione todas as opções disponíveis
 
+# Radio & Checkbox
+Todos os testes são realizados na página `Radio & Checkbox`
+
+[Clique aqui](https://letcode.in/radio) para abrir a página
+
+## Select any one
+![](/doc-assets/radio/radio.png)
+
+### O que precisa ser feito?
+Selecionar umas das opções(Yes/No) no radio button `Select any one`
+
+## Accept the T&C
+![](/doc-assets/radio/checkbox.png)
+
+### O que precisa ser feito?
+Clicar no checkbox `Accept the T&C` para aceitar os termos e condições
+
+# Forms
+Todos os testes são realizados na página `Forms`
+
+[Clique aqui](https://letcode.in/forms) para abrir a página
+
+## Preencher o form
+![](/doc-assets/form/form.png)
+
+### O que precisa ser feito?
+Realize o preenchimento de todos os campos do form utilizando o conhecimento adquirido durante as interações com os elementos que já trabalhamos (`buttons`, `input`, `dropdown` e `radio`)
+
+> **Nota:** Após clicar no botão de subtmeter o form, todos os campos do form serão limpos, ficarão vazios. Este é o comportamento esperado após submeter o form...
+
 # Documentações úteis
 
 ## Ações do Playwright
@@ -198,4 +251,9 @@ Verifique a documentação abaixo para entender como utilizar um JavaScript na p
 - [evaluateAll](https://playwright.dev/docs/api/class-locator#locator-evaluate-all)
 
 ## Extrair as opções selecionadas de um dropdown com suporte a múltipla escolha
-https://stackoverflow.com/questions/5866169/how-to-get-all-selected-values-of-a-multiple-select-box
+- [StackOverflow](https://stackoverflow.com/questions/5866169/how-to-get-all-selected-values-of-a-multiple-select-box)
+
+## Selecionar um radio ou checkbox
+- [Checkboxes and radio buttons](https://playwright.dev/docs/input#checkboxes-and-radio-buttons)
+
+- [check](https://playwright.dev/docs/api/class-locator#locator-check)

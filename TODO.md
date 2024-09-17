@@ -8,7 +8,21 @@
     - [Append a text and press keyboard tab](#append-a-text-and-press-keyboard-tab)
 
 2. [Buttons](#buttons)
-3. [Documentações úteis](#documentações-úteis)
+    - [Goto Home and come back here using driver command](#goto-home-and-come-back-here-using-driver-command)
+    - [Get the X & Y co-ordinates](#get-the-x--y-co-ordinates)
+    - [Find the color of the button](#find-the-color-of-the-button)
+    - [Find the height & width of the button](#find-the-height--width-of-the-button)
+    - [Confirm button is disabled](#confirm-button-is-disabled)
+    - [Click and Hold Button](#click-and-hold-button)
+
+3. [Dropdown](#select-dropdown)
+    - [Select the apple using visible text](#select-the-apple-using-visible-text)
+    - [Select your super hero's](#select-your-super-heros)
+    - [[Home Challenge] Select your super hero's](#challenge-select-your-super-heros)
+    - [Select the last programming language and print all the options](#select-the-last-programming-language-and-print-all-the-options)
+
+4. []
+5. [Documentações úteis](#documentações-úteis)
 
 # Input
 Todos os testes são realizados na página "Input"
@@ -104,6 +118,36 @@ Verifique se o botão está configurado como `disabled`
 ### O que precisa ser feito?
 Clique no botão por no mínimo 5 segundos e valide se o texto do botão mudou para `Button has been long pressed`
 
+
+# Select (dropdown)
+Todos os testes são realizados na página "Buttons"
+
+[Clique aqui](https://letcode.in/dropdowns) para abrir a página
+
+## Select the apple using visible text
+![](/doc-assets/select/selectApple.png)
+
+### O que precisa ser feito?
+Selecione a opção que possui o `texto/label` igual a `Apple`
+
+## Select your super hero's
+![](/doc-assets/select/superHero.png)
+
+### O que precisa ser feito?
+Selecione um ou mais super heroes utilizando o atributo `value` da opção que deseja selecionar
+
+## [Challenge] Select your super hero's
+
+### O que precisa ser feito?
+Selecione múltiplos super heroes utilizando a `label` ou o `value` da opção que deseja selecionar.   
+Verifique se as opções selecionadas estão iguais as opções que você espera que deveriam estar selecionadas
+
+## Select the last programming language and print all the options
+![](/doc-assets/select/programmingLang.png)
+
+### O que precisa ser feito?
+Selecione a última opção através do index da opção desejada
+
 # Documentações úteis
 
 ## Ações do Playwright
@@ -133,3 +177,14 @@ Verifique a documentação abaixo para entender como extrair as coordenadas, alt
 
 - [bounding box](https://playwright.dev/docs/api/class-locator#locator-bounding-box)
 
+## Selecionar uma opção em um dropdown
+Verifique a documentação abaixo para entender como selecionar um dropdown a partir da sua `label` ou `value`
+
+- [selectOption](https://playwright.dev/docs/api/class-locator#locator-select-option)
+
+## Rodar um JavaScript na page
+Verifique a documentação abaixo para entender como utilizar um JavaScript na page sob testes.
+- [evaluateAll](https://playwright.dev/docs/api/class-locator#locator-evaluate-all)
+
+## Extrair as opções selecionadas de um dropdown com suporte a múltipla escolha
+https://stackoverflow.com/questions/5866169/how-to-get-all-selected-values-of-a-multiple-select-box

@@ -1,14 +1,14 @@
 import { expect, Page } from "@playwright/test";
 import { BasePage } from "../base-page";
-import { DropdownPageMapping } from "./dropdown-mapping"
+import { SelectPageMapping } from "./select-mapping"
 
-export class DropdownPage extends BasePage {
+export class SelectPage extends BasePage {
     public readonly page: Page;
-    public mapping: DropdownPageMapping
+    public mapping: SelectPageMapping
 
     public constructor(page: Page) {
         super(page);
         this.page = page;
-        this.mapping = new DropdownPageMapping(page);
+        this.mapping = new SelectPageMapping(page);
     }
 }

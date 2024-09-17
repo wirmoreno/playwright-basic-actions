@@ -1,6 +1,6 @@
 import type { Locator, Page } from "@playwright/test";
 
-export class DropdownPageMapping {
+export class SelectPageMapping {
     public readonly page: Page;
     public readonly selectFruit: Locator;
     public readonly selectionSubtitle: Locator;
